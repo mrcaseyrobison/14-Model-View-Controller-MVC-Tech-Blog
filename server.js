@@ -28,3 +28,16 @@ store: new SequelizeStore({
     db: sequelize
 }),
 };
+
+app.use(session(sess));
+app.use(express.json());
+app.use(express.urlencoded({ extrended: true}));
+app.use(express.static(path.join(__dirname, "public")));
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+app.use(routes);
+
+// Turn on connection to database and server //
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log("Now listening on port 3001"));
+});
