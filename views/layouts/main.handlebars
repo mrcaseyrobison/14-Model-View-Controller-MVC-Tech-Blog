@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Ye Old Tech Blog</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="has-text-black px-2 py-2 has text-weight-bold">Ye Old Tech Blod</h1>
+            <nav class="navbar mt-3">
+                {{#if loggedIn}}
+                <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
+                <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
+                <a href="/dashboard/create" class="navbar-item is-hoverable pt-1">Create a Post</a>
+                <button id="logout" class="button is-danger">Log Out</button>
+                {{else}}
+                <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
+                <a href="/login" class="button is-primary">Log In</a>
+                {{/if}}
+            </nav>
+        </header>
+
+        <main>
+            {{{ body }}}
+        </main>
+
+        <footer class="footer rows pb-2">
+            <div class="row-is-full content has-text-centered">
+                <p>
+                    <a href="/">Homepage</a>{{#if loggedIn}} |
+                    <a href="/dashboard/">Dashboard</a> |
+                    <a href="/dashboard/create/">Create a Post</a>
+                    {{else}}
+                    | <a href="/login/">Log In</a>
+                    {{/if}}
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/public/javascript/logout.js"></script>
+    {{/if}}
+    
+</body>
+</html>
