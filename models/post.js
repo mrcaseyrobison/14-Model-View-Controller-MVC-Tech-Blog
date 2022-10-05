@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("serialize");
+const { Model, DataTypes } = require("sequelize");
 const serialize = require ("../config/connection");
 
 // Creates POST Model
