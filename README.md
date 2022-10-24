@@ -1,7 +1,7 @@
 # 14-Model-View-Controller-MVC-Tech-Blog
 ### Description
 
-*A mysql database and CMS-style Blog built using Model View Controller (MVC) paradigm. Built using MySQL2, Express, Sequelize, Bulma, Handlebars and dotenv*
+A MySql database and CMS-style Tech Blog built using Model View Controller (MVC) paradigm. Built using MySQL2, Express, Sequelize, Bulma, Handlebars and dotenv*
 
 ### Deployed Application
 
